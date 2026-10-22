@@ -43,7 +43,7 @@ export const deNotifications = {
   testUnsupported: 'Dieses System unterstützt keine nativen Benachrichtigungen.',
   muteSoundsTitle: 'Oberflächentöne stummschalten',
   muteSoundsDesc:
-    'Schaltet automatische Abschluss-, Aktivierungs- und Denktöne sowie haptisches Feedback aus. Klangvorschauen und gesprochene Antworten werden weiterhin abgespielt.',
+    'Schaltet automatische Abschluss-, Aktivierungs- und Denktöne, haptisches Feedback und die Töne von Systembenachrichtigungen aus. Klangvorschauen und gesprochene Antworten werden weiterhin abgespielt.',
   completionSoundTitle: 'Abschluss-Sound',
   completionSoundDesc:
     'Wird abgespielt, wenn ein Agent-Turn endet. Wählen Sie eine Vorlage aus und hören Sie sie hier an.',

@@ -38,12 +38,11 @@ export const jaNotifications = {
   test: 'テスト通知を送信',
   testTitle: 'Hermes',
   testBody: '通知は正常に動作しています。',
-  testSent:
-    'テストを送信しました。表示されない場合は、OS の通知許可と集中モード／おやすみモードを確認してください。',
+  testSent: 'テストを送信しました。表示されない場合は、OS の通知許可と集中モード／おやすみモードを確認してください。',
   testUnsupported: 'このシステムはネイティブ通知に対応していません。',
   muteSoundsTitle: 'インターフェース音をミュート',
   muteSoundsDesc:
-    '完了・ウェイクワード・思考中の自動通知音と触覚フィードバックを無効にします。サウンドのプレビューと音声による応答は引き続き再生されます。',
+    '完了・ウェイクワード・思考中の自動通知音、触覚フィードバック、OS 通知の音を無効にします。サウンドのプレビューと音声による応答は引き続き再生されます。',
   completionSoundTitle: '完了サウンド',
   completionSoundDesc: 'エージェントのターン終了時に再生されます。プリセットを選んでここで試聴できます。',
   completionSoundPreview: '試聴'

@@ -42,7 +42,7 @@ export const enNotifications = {
   testUnsupported: 'This system does not support native notifications.',
   muteSoundsTitle: 'Mute interface sounds',
   muteSoundsDesc:
-    'Silences automatic completion, wake-word and thinking cues, and haptic feedback. Sound previews and spoken replies still play.',
+    'Silences automatic completion, wake-word and thinking cues, haptic feedback, and OS notification sounds. Sound previews and spoken replies still play.',
   completionSoundTitle: 'Completion Sound',
   completionSoundDesc: 'Plays when an agent turn finishes. Pick a preset and preview it here.',
   completionSoundPreview: 'Preview'

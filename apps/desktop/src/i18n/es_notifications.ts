@@ -43,7 +43,7 @@ export const esNotifications = {
   testUnsupported: 'Este sistema no admite notificaciones nativas.',
   muteSoundsTitle: 'Silenciar sonidos de la interfaz',
   muteSoundsDesc:
-    'Silencia los avisos automáticos de finalización, activación y reflexión, y la respuesta háptica. Las vistas previas de sonido y las respuestas habladas siguen reproduciéndose.',
+    'Silencia los avisos automáticos de finalización, activación y reflexión, la respuesta háptica y los sonidos de las notificaciones del sistema. Las vistas previas de sonido y las respuestas habladas siguen reproduciéndose.',
   completionSoundTitle: 'Sonido de finalización',
   completionSoundDesc:
     'Reproduce un sonido cuando termina el turno de un agente. Elige un ajuste predefinido y pruébalo aquí.',

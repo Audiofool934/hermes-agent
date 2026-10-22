@@ -43,7 +43,7 @@ export const frNotifications = {
   testUnsupported: 'Ce système ne prend pas en charge les notifications natives.',
   muteSoundsTitle: 'Couper les sons de l’interface',
   muteSoundsDesc:
-    'Coupe les signaux automatiques de fin, d’activation et de réflexion, ainsi que le retour haptique. Les aperçus sonores et les réponses vocales restent audibles.',
+    'Coupe les signaux automatiques de fin, d’activation et de réflexion, le retour haptique et les sons des notifications système. Les aperçus sonores et les réponses vocales restent audibles.',
   completionSoundTitle: 'Son de fin',
   completionSoundDesc: "Se joue à la fin d'un tour d'agent. Choisissez un préréglage et prévisualisez-le ici.",
   completionSoundPreview: 'Aperçu'
