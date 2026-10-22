@@ -2,7 +2,6 @@ import { contextBridge, ipcRenderer, webFrame, webUtils } from 'electron'
 
 import type { DesktopProfileRoute } from './desktop-profile'
 import type { HudModifierApi, HudModifierStatus } from './hud-modifier-types'
-import { applySoundMute } from './notification-sound-mute'
 import { customWindowControlsEnabled } from './window-controls'
 
 // Which translucency the OS can back. Asked synchronously because the renderer
@@ -338,7 +337,7 @@ contextBridge.exposeInMainWorld('hermesDesktop', {
   // (Electron logs a stack for every rejected invoke). Turn it back into the
   // rejection the renderer expects — see electron/api-expected-404.ts.
   api: request => ipcRenderer.invoke('hermes:api', request).then(unwrapExpectedNotFound),
-  notify: payload => ipcRenderer.invoke('hermes:notify', applySoundMute(payload, globalThis.localStorage)),
+  notify: payload => ipcRenderer.invoke('hermes:notify', payload),
   claimStartupLatency: () => ipcRenderer.invoke('hermes:startup-latency:claim'),
   requestMicrophoneAccess: () => ipcRenderer.invoke('hermes:requestMicrophoneAccess'),
   readWindowBelow: () => ipcRenderer.invoke('hermes:window:readBelow'),
