@@ -2,9 +2,14 @@
 import { afterEach, expect, it, vi } from 'vitest'
 
 import { getAudioContext } from '@/lib/audio-context'
+import {
+  $completionSoundVariantId,
+  DEFAULT_COMPLETION_SOUND_VARIANT_ID,
+  NO_COMPLETION_SOUND_VARIANT_ID
+} from '@/store/completion-sound'
 import { $hapticsMuted, setHapticsMuted } from '@/store/haptics'
 
-import { playCompletionSound } from './completion-sound'
+import { playCompletionSound, previewCompletionSound } from './completion-sound'
 
 vi.mock('@/lib/audio-context', () => ({ getAudioContext: vi.fn(() => null) }))
 
@@ -13,6 +18,7 @@ const original = window.hermesDesktop
 afterEach(() => {
   window.hermesDesktop = original
   setHapticsMuted(false)
+  $completionSoundVariantId.set(DEFAULT_COMPLETION_SOUND_VARIANT_ID)
   vi.clearAllMocks()
 })
 
@@ -54,4 +60,16 @@ it('rechecks mute after ownership resolves, including a failed claim and a later
   await Promise.resolve()
   expect(getAudioContext).toHaveBeenCalledTimes(1)
   expect($hapticsMuted.get()).toBe(false)
+})
+
+it('stays silent on None and never claims the cue from an audible peer', () => {
+  const claim = vi.fn(async () => true)
+  window.hermesDesktop = { ...original, claimAmbientCue: claim }
+  $completionSoundVariantId.set(NO_COMPLETION_SOUND_VARIANT_ID)
+
+  playCompletionSound('session')
+  previewCompletionSound()
+
+  expect(claim).not.toHaveBeenCalled()
+  expect(getAudioContext).not.toHaveBeenCalled()
 })
